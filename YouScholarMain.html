@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> YOUSCHOLAR </title>
+</head>
+<body>
+
+
+
+
+<script src="http://www.yvoschaap.com/ytpage/ytembed.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+
+function myfcn(i){
+var videoId = ['sQK3Yr4Sc_k', 'g78utcLQrJ4', 'eo5XndJaz-Y', 'FfLLHQDgpjI', 'ZnY9_wMZZWI', '_qgSz1UmcBM', 'JKNYzpMf46o', 'GcjgWov7mTM&list=PL7A9646BC5110CF64', 'L0k-enzoeOM', '6IDLSvCNPTs' ];
+var apiKey = 'AIzaSyBIrEnCdOYbd6op4SePQVzhYef-49Z0WqE';
+
+$.ajax({
+ url: "https://www.googleapis.com/youtube/v3/videos?id=" + videoId[i] + "&key="+ apiKey + "&fields=items(etag%2Csnippet(description%2Cthumbnails%2Ctitle%2Ctags))&part=snippet", 
+ dataType: "jsonp",
+ 
+ success: function(data){
+	
+  console.log("hello");
+  //console.log(data.items[0].snippet.title); 
+  //console.log(data.items[0].snippet.description);   
+  //console.log(data.items[0].snippet.tags);     
+ },
+ 
+ 
+ error: function(jqXHR, textStatus, errorThrown) {
+ alert (textStatus, + ' | ' + errorThrown);
+ }
+ });
+}
+<br>
+<table style="width: 23px;">
+<tbody>
+<tr style="height: 23px;">
+<td style="width: 185px; height: 23px;" rowspan="2">Title;&nbsp;</td>
+<td style="width: 10px; height: 23px;">&nbsp;asdfdsfsda</td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 10px; height: 23px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- DivTable.com -->
+ 
+ 
+//for( i = 0; i < 10;i++){ //2 is the videoId.length
+//myfcn(i); }
+</script>
+
+<form onSubmit="ytEmbed.init({'block':'ytThumbs','key':'','q':document.getElementById('searchBox').value,'type':'search','results':5,'meta':true,'player':'embed','layout':'full'}); return false">
+<input type="text" id="searchBox"/>
+<button type="submit">SUBMIT</button>
+</form>
+
+	<div id="ytThumbs"></div>
+
+<script>
+function myFunction() {
+	
+	var htmlString='';
+	
+	for (m=0; m<30; m++){
+		var num = m.toString();
+		htmlString.concat('<p>This' + num + '</p>');
+	
+	}
+		
+    document.getElementById("demo").innerHTML = htmlString;
+	
+	console.log(data.items[0].snippet.title);
+  	console.log(data.items[0].snippet.description);   
+  	//console.log(data.items[0].snippet.tags);
+}
+	
+</script>
+<p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
+</body>
+</html>
